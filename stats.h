@@ -9,32 +9,124 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h 
+ * @brief Simple statistical analysis on a dataset
  *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * This header file contains all the functions needed to perform
+ * a simple statistical analysis on a dataset. This analysis includes
+ * finding the maximum, minimum, mean and median values of the dataset.
+ * Also, the data will be sorted from the largest to the smallest
+ * value. 
+ *  
+ * @author Jose María Herrera Sampablo
+ * @date 30/01/2021
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+/**
+ * @brief Find the MINIMUM value of a dataset
+ *
+ * Given a data set of unsigned char data, this
+ * function returns the minimum value found
+ *
+ * @param ptr Pointer to data array
+ * @param size Const value of the data array
+ *
+ * @return Minimum value found 
+ */
+
+int find_minimum(int *ptr, int size);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Find the MAXIMUM value of a dataset
  *
- * <Add Extended Description Here>
+ * Given a data set of unsigned char data, this
+ * function returns the maximum value found
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param ptr Pointer to data array
+ * @param size Const value of the data array
  *
- * @return <Add Return Informaiton here>
+ * @return Maximum value found 
  */
+
+int find_maximum(int *ptr, int size);
+
+/**
+ * @brief Compute the MEAN value of a dataset
+ *
+ * Given a data set of unsigned char data, this
+ * function computes the mean value of the data
+ *
+ * @param ptr Pointer to data array
+ * @param size Const value of the data array
+ *
+ * @return Mean value of the dataset
+ */
+
+int find_mean(int *ptr, int size);
+
+/**
+ * @brief Compute the MEDIAN value of a dataset
+ *
+ * Given a data set of unsigned char data, this
+ * function computes the median value of the data
+ *
+ * @param ptr Pointer to data array
+ * @param size Const value of the data array
+ *
+ * @return Median value of the dataset
+ */
+
+int find_median(int *ptr, int size);
+
+/**
+ * @brief SORT a dataset from largest to smallest
+ *
+ * Given a data set of unsigned char data, this
+ * function sorts the original data from largest
+ * to smallest
+ *
+ * @param ptr Pointer to data array
+ * @param size Const value of the data array
+ *
+ * @return void
+ */
+
+void sort_array(int *ptr, int size);
+
+/**
+ * @brief Print elements of a dataset
+ *
+ * Given a data set of unsigned char data, this
+ * function prints all the data to the screen
+ *
+ * @param ptr Pointer to data array
+ * @param size Const value of the data array
+ *
+ * @return void
+ */
+
+void print_array(int *ptr, int size);
+
+/**
+ * @brief Print statistics
+ *
+ * This functions prints to the screen all the
+ * statistical analytics computed in a nicely 
+ * formatted way
+ *
+ * @param mean Integer value computed for mean
+ * @param median Integer value coputed for median
+ * @para min Integer value found for minimum 
+ * @para max Integer value found for maximum
+ * @para sort_data Array of data already sorted 
+ *
+ * @return void
+ */
+
+void print_statistics(int mean, int median, int min, int max, int dataset[]);
 
 
 #endif /* __STATS_H__ */

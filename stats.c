@@ -9,13 +9,17 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Simple statistical analysis on a dataset
  *
- * <Add Extended Description Here>
+ * This file contains the complete code needed to perform
+ * a simple statistical analysis on a dataset. This analysis includes
+ * finding the maximum, minimum, mean and median values of the dataset.
+ * Also, the data will be sorted from the largest to the smallest
+ * value.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Jose Maria Herrera Sampablo
+ * @date 30/01/2021
  *
  */
 
@@ -40,4 +44,38 @@ void main() {
 
 }
 
-/* Add other Implementation File Code Here */
+
+int find_minimum(int *ptr, int size){
+
+	return ();
+}
+
+int find_maximum(int *ptr, int size){
+	
+	return ();
+}
+
+int find_mean(int *ptr, int size){
+
+	return ();
+}
+
+int find_median(int *ptr, int size){
+
+	return ();
+}
+
+void sort_array(int *ptr, int size){
+
+
+}
+
+void print_array(int *ptr, int size){
+
+	
+}
+
+void print_statistics(int mean, int median, int min, int max, int dataset[]){
+
+
+}
