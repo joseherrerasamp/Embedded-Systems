@@ -37,7 +37,7 @@
  * @return Minimum value found 
  */
 
-int find_minimum(int *ptr, int size);
+int find_minimum(unsigned char *ptr, int size);
 
 /**
  * @brief Find the MAXIMUM value of a dataset
@@ -51,7 +51,7 @@ int find_minimum(int *ptr, int size);
  * @return Maximum value found 
  */
 
-int find_maximum(int *ptr, int size);
+int find_maximum(unsigned char *ptr, int size);
 
 /**
  * @brief Compute the MEAN value of a dataset
@@ -65,7 +65,7 @@ int find_maximum(int *ptr, int size);
  * @return Mean value of the dataset
  */
 
-int find_mean(int *ptr, int size);
+int find_mean(unsigned char *ptr, int size);
 
 /**
  * @brief Compute the MEDIAN value of a dataset
@@ -79,7 +79,7 @@ int find_mean(int *ptr, int size);
  * @return Median value of the dataset
  */
 
-int find_median(int *ptr, int size);
+int find_median(unsigned char *ptr, int size);
 
 /**
  * @brief SORT a dataset from largest to smallest
@@ -94,7 +94,7 @@ int find_median(int *ptr, int size);
  * @return void
  */
 
-void sort_array(int *ptr, int size);
+void sort_array(unsigned char *ptr, int size);
 
 /**
  * @brief Print elements of a dataset
@@ -108,7 +108,7 @@ void sort_array(int *ptr, int size);
  * @return void
  */
 
-void print_array(int *ptr, int size);
+void print_array(unsigned char *ptr, int size);
 
 /**
  * @brief Print statistics
