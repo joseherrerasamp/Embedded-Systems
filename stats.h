@@ -32,7 +32,7 @@
  * function returns the minimum value found
  *
  * @param ptr Pointer to data array
- * @param size Const value of the data array
+ * @param size Constant lenght of the data array
  *
  * @return Minimum value found 
  */
@@ -46,7 +46,7 @@ int find_minimum(unsigned char *ptr, int size);
  * function returns the maximum value found
  *
  * @param ptr Pointer to data array
- * @param size Const value of the data array
+ * @param size Constant lenght of the data array
  *
  * @return Maximum value found 
  */
@@ -60,7 +60,7 @@ int find_maximum(unsigned char *ptr, int size);
  * function computes the mean value of the data
  *
  * @param ptr Pointer to data array
- * @param size Const value of the data array
+ * @param size Constant lenght of the data array
  *
  * @return Mean value of the dataset
  */
@@ -74,7 +74,7 @@ int find_mean(unsigned char *ptr, int size);
  * function computes the median value of the data
  *
  * @param ptr Pointer to data array
- * @param size Const value of the data array
+ * @param size Constanat lenght of the data array
  *
  * @return Median value of the dataset
  */
@@ -89,7 +89,7 @@ int find_median(unsigned char *ptr, int size);
  * to smallest
  *
  * @param ptr Pointer to data array
- * @param size Const value of the data array
+ * @param size Constant lenght of the data array
  *
  * @return void
  */
@@ -103,7 +103,7 @@ void sort_array(unsigned char *ptr, int size);
  * function prints all the data to the screen
  *
  * @param ptr Pointer to data array
- * @param size Const value of the data array
+ * @param size Constant lenght of the data array
  *
  * @return void
  */
@@ -117,16 +117,13 @@ void print_array(unsigned char *ptr, int size);
  * statistical analytics computed in a nicely 
  * formatted way
  *
- * @param mean Integer value computed for mean
- * @param median Integer value coputed for median
- * @para min Integer value found for minimum 
- * @para max Integer value found for maximum
- * @para sort_data Array of data already sorted 
+ * @param ptr Pointer to data array
+ * @param size Constant lenght of the data array 
  *
  * @return void
  */
 
-void print_statistics(int mean, int median, int min, int max, int dataset[]);
+void print_statistics(unsigned char *ptr, int size);
 
 
 #endif /* __STATS_H__ */
