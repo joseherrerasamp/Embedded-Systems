@@ -26,6 +26,7 @@
 
 
 #include <stdio.h>
+#include<math.h>    // Math library added to use round function
 #include "stats.h"
 
 /* Size of the Data Set */
@@ -39,43 +40,120 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  printf("Initial dataset:\n");
+  print_array(&test[0], SIZE);
+  print_statistics(&test[0], SIZE);
 
 }
 
 
-int find_minimum(int *ptr, int size){
+int find_minimum(unsigned char *ptr, int size){
 
-	return ();
+  int i, min;
+
+  min = *ptr;
+  ptr++;
+
+  for(i=1; i < size; i++){
+    if(*ptr < min){
+      min = *ptr;
+    }
+    ptr++;
+  }
+
+	return (min);
 }
 
-int find_maximum(int *ptr, int size){
+
+int find_maximum(unsigned char *ptr, int size){
 	
-	return ();
+	int i, max;
+
+  max = *ptr;
+  ptr++;
+
+  for(i=1; i < size; i++){
+    if(*ptr > max){
+      max = *ptr;
+    }
+    ptr++;
+  }
+
+  return (max);
 }
 
-int find_mean(int *ptr, int size){
 
-	return ();
+int find_mean(unsigned char *ptr, int size){
+
+  int i;
+  double sum = 0.;
+
+  for(i=0; i < size; i++){
+    sum += *ptr;
+    ptr++;
+  }
+
+	return ((int)(round(sum / size)));
 }
 
-int find_median(int *ptr, int size){
 
-	return ();
+int find_median(unsigned char *ptr, int size){
+
+  int med;
+
+  if(size % 2 == 0){
+    med = (*(ptr + size / 2) + *(ptr + (size / 2 + 1))) / 2.;
+    med = (int)(round(med));
+  }else{
+    med = *(ptr + (size + 1) / 2);
+  }
+	
+  return (med);
 }
 
-void sort_array(int *ptr, int size){
 
+void sort_array(unsigned char *ptr, int size){
 
+  int i, j, tmp;
+
+  for(i = 0; i < size; i++){
+    for(j = i + 1; j < size; j++){
+      if(*(ptr + j) > *(ptr + i)){
+        tmp = *(ptr + i);
+        *(ptr + i) = *(ptr + j);
+        *(ptr + j) = tmp;
+      }
+    }
+  }
 }
 
-void print_array(int *ptr, int size){
 
+void print_array(unsigned char *ptr, int size){
+
+  int i;
+
+  for(i=0; i < size; i++){
+    if((i+1) % 5 != 0){
+      printf("%d\t", *ptr);
+    }
+    else {
+      printf("%d\n", *ptr);
+    }
+
+    ptr++;
+  }
 	
 }
 
-void print_statistics(int mean, int median, int min, int max, int dataset[]){
 
+void print_statistics(unsigned char *ptr, int size){
+
+  printf("Sorted dataset in descending order:\n");
+  sort_array(ptr, size);
+  print_array(ptr, size);
+  printf("Minimum value stored in the dataset: %d\n", find_minimum(ptr, size));
+  printf("Maximum value stored in the dataset: %d\n", find_maximum(ptr, size));
+  printf("Mean value of the dataset: %d\n", find_mean(ptr, size));
+  printf("Median value of the dataset: %d\n", find_median(ptr, size));
 
 }
